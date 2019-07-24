@@ -20,14 +20,12 @@ s = collections.defaultdict(list)
 for key in dict_word_bysig:
     s[len(key)].append(key)
 dict_s = dict (s)
-dict_s
 
 anagram_numb = {}
 for key, value in dict_s.items():
     anagram_numb[key] = []
     for oneValue in value:
         anagram_numb[key].append(len_dict_word_bysig[oneValue]);
-print (anagram_numb)
 
 anagram_length = {}
 for key, value in anagram_numb.items():
@@ -35,17 +33,16 @@ for key, value in anagram_numb.items():
     for oneValue in value:
         if oneValue >1:
             anagram_length[key].append(oneValue);
-print (anagram_length)
 
 anagram_length_final = {}
-
 for key, value in anagram_length.items():
     anagram_length_final[key] = sum(value)
-print (anagram_length_final)
+
+sorted_anagram_length_final = collections.OrderedDict(anagram_length_final)
+sorted_anagram_length_final
 
 import matplotlib.pylab as plt
 plt.plot(*zip(*sorted(anagram_length_final.items())))
 plt.show()
 
-sorted_anagram_length_final = collections.OrderedDict(anagram_length_final)
-sorted_anagram_length_final
+
