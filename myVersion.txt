@@ -1,3 +1,4 @@
 word = open ('words', 'r')
 wordlist = word.readlines()
 wordclean = [word.strip().lower() for word in wordlist]
+wordunique = list(set(wordclean))
