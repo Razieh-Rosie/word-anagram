@@ -44,5 +44,3 @@ sorted_anagram_length_final
 import matplotlib.pylab as plt
 plt.plot(*zip(*sorted(anagram_length_final.items())))
 plt.show()
-
-
